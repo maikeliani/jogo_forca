@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Oracle Challenge 2</title>
+  <link rel="stylesheet" href="reset.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+</head>
+  <body>
+    <header>
+      <img id="icon" src="img/icon.png" allow="geolocation" alt="logo">
+    </header>
+    
+<main>
+    <section class="startpage">
+      <h1>Oracle ONE </h1>
+      <span></span>
+      <h1>JOGO DA FORCA</h1>
+      <button class="btn_play" onclick="screenGame()">INICIAR JOGO</button>
+      <button class="btn_add" onclick="adicionaPalavra()">ADICIONAR PALAVRA</button>      
+    </section>
+
+    <section class="games">      
+        <div class="imgforca">
+          <img src="img/base.png" alt="" class="base"/>
+          <img src="img/astemaior.png" alt="" class="astemaior"/>        
+          <img src="img/astemenor.png" alt="" class="astemenor"/>
+          <img src="img/corda.png" alt=""class="corda"/>
+          <img src="img/cabeca.png" alt="" class="cabeca"/>
+          <img src="img/tronco.png" alt=""class="tronco"/>
+          <img src="img/bracodireito.png" alt="" class="bracodireito"/>
+          <img src="img/bracoesquerdo.png" alt="" class="bracoesquerdo"/>
+          <img src="img/pernadireita.png" alt="" class="pernadireita"/>
+          <img src="img/pernaesquerda.png" alt="" class="pernaesquerda"/>
+        </div>
+      
+        
+          <textarea id="digitado"   onchange="" readonly >
+          </textarea>
+          <div class="word" id="word">
+            <div class="word-content" id="addword">
+              <p id="letter"></p>
+            </div>
+            <div class="word-contentOFF" id="addword">
+              <p id="letterOFF"></p>
+            </div>
+          </div>
+          
+            <button class="btn_new" onclick="window.location.reload()">Novo Jogo</button>
+            <button class="btn_cancel" onclick="window.location.reload()">Desistir</button>
+
+            <div class="dica">
+            <textarea id="dicain" name="" style="resize:none" readonly>Dica</textarea>
+            </div>
+    </section>   
+      
+    <section id="addPalavra" style="display: none">
+
+      <p class="select_categoria">ESCOLHA A CATEGORIA </p>
+      <select name="escolha_categoria" id="escolha_categoria">
+        <option value="Fruta">CATEGORIA: FRUTAS</option>
+        <option value="Países" selected>CATEGORIA:PAÍSES</option>        
+      </select>
+      <form method="get" id="form"  >
+          <textarea name="nova-palavra" id="nova-palavra" cols="30" rows="10"   placeholder="Digite a nova palavra aqui: " ></textarea>
+          <div id="importante">
+              <ion-icon name="alert-circle-sharp"></ion-icon>
+              <p>Máx. de 8 letras e sem acentuação.</p>
+          </div>
+          <div class="botoes">
+              <button name="submit" type="submit" id="enviar-palavra" class="btn-principal" >Salvar e enviar</button>
+              <button id="cancelar" class="btn-secundario">Cancelar</button>
+              <button id="reset" class="btn-secundario" onclick="resetar()">Limpar</button>
+          </div>
+      </form>
+    </section>
+    <div id="msg-id" class="msg-container">
+      <div class="box-msg">
+        <h2 class="msg-vitoria">Parabéns, Você ganhou!</h2>
+        <h2 class="msg-derrota">VOCÊ PERDEU!</h2>
+        <h2 class="palavra_errada"></h2>
+          <p class="pergunta">Deseja jogar novamente?</p>
+          <div class="button-msg">
+            <button class="btn_novo" onclick="window.location.reload()">Jogar</button>
+          <button class="btn_desistir" onclick="window.location.reload()">Desistir</button>
+          </div>
+      </div>
+    </div>
+</main>   
+   
+
+<footer class="footer">
+    <a href="https://github.com/maikeliani" target="_blank"><img src="img/git.png" alt=""></a>
+    <a href="https://www.linkedin.com/in/maikel-iani/" target="_blank"><img src="img/linkedin.png" alt=""></a>
+      
+    <p class="copyright">&copy; Copyright - Maikel Iani</p>
+    <p class="copyrightGame">&copy; Copyright - Maikel Iani</p>
+</footer>
+
+    <script src="script.js"></script>  
+    <script src="/add_word.js"></script>  
+  </body>
+</html>
